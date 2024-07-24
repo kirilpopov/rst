@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/@interopio/desktop"></script>
+<script src="./init-glue.js"></script>
+
+<script>
+    (async () => {
+        IODesktop({}).then(i => {
+            window.io = i;   
+            io.contexts.subscribe("test", (data) => {
+                console.log("Received context", data);
+            });     
+        });
+    })();
+
+    function wait(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+</script>
+
+<body>
+    Test
+</body>
