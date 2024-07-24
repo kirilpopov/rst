@@ -10,7 +10,7 @@
             io.contexts.subscribe("test", (data) => {
                 console.log("Received context", data);
             });
-            io.contexts.publish("test", { test: "test" });
+            io.contexts.update("test", { test: "test" });
         });
 
     function wait(milliseconds) {
