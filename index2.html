@@ -2,12 +2,14 @@
 <script src="./init-glue.js"></script>
 
 <script>
+    glue42gd.consoleLogLevel = "trace";
+
     (async () => {
         IODesktop({}).then(i => {
-            window.io = i;   
+            window.io = i;
             io.contexts.subscribe("test", (data) => {
                 console.log("Received context", data);
-            });     
+            });
         });
     })();
 
@@ -16,6 +18,12 @@
     }
 </script>
 
+<style>
+    body {
+        background-color: white;
+    }
+</style>
+
 <body>
-    Test
+    Test 2
 </body>
